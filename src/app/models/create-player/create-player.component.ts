@@ -8,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class CreatePlayerComponent implements OnInit {
 
   constructor(
+    private id: String,
     private firstName: String,
     private lastName: String,
     private teamLocation: String,
-    private teanNickName: String,
+    private teamNickName: String,
     private position: String,
     private number: String,
     private experience: number

@@ -1,9 +1,53 @@
-<h1>{{ name }}</h1>
+<div class="row">
+  <span class="span-button" routerLink="/teams"><i class="material-icons">arrow_back_ios</i> Teams</span>
+</div>
 
-<div>
-  <ul>
-    <li *ngFor="let player of iowaCubsPlayerInfo">
-      <div *ngIf='player'>{{ player.firstName }} {{ player.lastName }} - {{ player.teamLocation }} {{ player.position }}</div>
-    </li>
-  </ul>
+<div class="row">
+  <h1>{{ name }}</h1>
+</div>
+
+<div class="row"><h2>Running Backs</h2></div>
+<div class="row">
+  <table matSort (matSortChange)="sortRbs($event)">
+    <tr>
+      <th mat-sort-header="name">Name</th>
+      <th mat-sort-header="team">Team</th>
+      <th mat-sort-header="rushYards">Rush Yards</th>
+      <th mat-sort-header="rushTds">Rush TDs</th>
+      <th mat-sort-header="receivingYards">Receiving Yards</th>
+      <th mat-sort-header="receivingTds">Receiving TDs</th>
+    </tr>
+  
+    <tr *ngFor="let player of iowaCubsRunningBacks">
+      <td>{{player.firstName}} {{player.lastName}}</td>
+      <td>{{player.teamNickName}}</td>
+      <td *ngIf="iowaCubsPlayerStatsMap.get(player.id).rushingYards">{{iowaCubsPlayerStatsMap.get(player.id).rushingYards}}</td>
+      <td *ngIf="iowaCubsPlayerStatsMap.get(player.id).rushingTds">{{iowaCubsPlayerStatsMap.get(player.id).rushingTds}}</td>
+      <td *ngIf="iowaCubsPlayerStatsMap.get(player.id).receivingYards">{{iowaCubsPlayerStatsMap.get(player.id).receivingYards}}</td>
+      <td *ngIf="iowaCubsPlayerStatsMap.get(player.id).receivingTds">{{iowaCubsPlayerStatsMap.get(player.id).receivingTds}}</td>
+    </tr>
+  </table>
+</div>
+
+<div class="row"><h2>Wide Receivers</h2></div>
+<div class="row">
+  <table matSort (matSortChange)="sortData($event)">
+    <tr>
+      <th mat-sort-header="name">Name</th>
+      <th mat-sort-header="fat">Team</th>
+      <th mat-sort-header="receivingYards">Receiving Yards</th>
+      <th mat-sort-header="receivingTds">Receiving TDs</th>
+      <th mat-sort-header="rushYards">Rush Yards</th>
+      <th mat-sort-header="rushTds">Rush TDs</th>
+    </tr>
+  
+    <tr *ngFor="let player of iowaCubsWideReceivers">
+      <td>{{player.firstName}} {{player.lastName}}</td>
+      <td>{{player.teamNickName}}</td>
+      <td *ngIf="iowaCubsPlayerStatsMap.get(player.id).receivingYards">{{iowaCubsPlayerStatsMap.get(player.id).receivingYards}}</td>
+      <td *ngIf="iowaCubsPlayerStatsMap.get(player.id).receivingTds">{{iowaCubsPlayerStatsMap.get(player.id).receivingTds}}</td>
+      <td *ngIf="iowaCubsPlayerStatsMap.get(player.id).rushingYards">{{iowaCubsPlayerStatsMap.get(player.id).rushingYards}}</td>
+      <td *ngIf="iowaCubsPlayerStatsMap.get(player.id).rushingTds">{{iowaCubsPlayerStatsMap.get(player.id).rushingTds}}</td>
+    </tr>
+  </table>
 </div>

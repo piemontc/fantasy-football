@@ -3,3 +3,15 @@
 div {
   margin: 5px;
 }
+
+.span-button:hover {
+  cursor: pointer;
+}
+
+.span-button:focus {
+  outline: 0!important;
+}
+
+table {
+  width: 100%;
+}

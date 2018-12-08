@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { CreatePlayerComponent } from '../models/create-player/create-player.component';
@@ -23,7 +23,16 @@ export class GetPlayersService {
     })
   }
 
-  getPlayerData(firstName: String, lastName: String): any {
-    return this.http.get(`https://api.stattleship.com/football/nfl/players?player_id=nfl-${firstName}-${lastName}`, this.headers)
+  getPlayerData(slug: String): any {
+    return this.http.get(`https://api.stattleship.com/football/nfl/players?player_id=nfl-${slug}`, this.headers)
+  }
+
+  getPlayerSeasonStats(slug: String): any {
+    return this.http.get(`https://api.stattleship.com/football/nfl/player_season_stats?player_id=nfl-${slug}&on=${this.getYesterdaysDate()}`, this.headers)
+  }
+
+  getYesterdaysDate() {
+    let today = new Date();
+    return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate() - 1}`
   }
 }

@@ -8,10 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { IowaCubsComponent } from './teams/iowa-cubs/iowa-cubs.component';
 import { RouterModule } from '@angular/router';
 
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { TeamsComponent } from './teams/teams.component';
 import { HomeComponent } from './home/home.component';
 import { CreatePlayerComponent } from './models/create-player/create-player.component';
+import { PlayerStatsComponent } from './models/player-stats/player-stats.component';
+import { MatSortModule, MatTableModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { CreatePlayerComponent } from './models/create-player/create-player.comp
     IowaCubsComponent,
     TeamsComponent,
     HomeComponent,
-    CreatePlayerComponent
+    CreatePlayerComponent,
+    PlayerStatsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,9 @@ import { CreatePlayerComponent } from './models/create-player/create-player.comp
     AppRoutingModule,
     RouterModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSortModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
