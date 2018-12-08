@@ -1,0 +1,9 @@
+<h1>{{ name }}</h1>
+
+<div>
+  <ul>
+    <li *ngFor="let player of iowaCubsPlayerInfo">
+      <div *ngIf='player'>{{ player.firstName }} {{ player.lastName }} - {{ player.teamLocation }} {{ player.position }}</div>
+    </li>
+  </ul>
+</div>
