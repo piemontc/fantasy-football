@@ -26,8 +26,4 @@ export class GetPlayersService {
   getPlayerData(firstName: String, lastName: String): any {
     return this.http.get(`https://api.stattleship.com/football/nfl/players?player_id=nfl-${firstName}-${lastName}`, this.headers)
   }
-
-  getAaronJones() {
-    return this.getPlayerData("rashaad", "penny")
-  }
 }
