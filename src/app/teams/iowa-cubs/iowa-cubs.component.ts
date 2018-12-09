@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetPlayersService } from '../../services/get-players.service';
-import { getBootstrapListener } from '@angular/router/src/router_module';
 import { CreatePlayerComponent } from 'src/app/models/create-player/create-player.component';
 import { PlayerStatsComponent } from 'src/app/models/player-stats/player-stats.component';
-import { Sort } from '@angular/material';
 
 @Component({
   selector: 'app-iowa-cubs',
@@ -16,8 +14,9 @@ export class IowaCubsComponent implements OnInit {
     private getPlayersService: GetPlayersService
   ) { }
 
+  private noVal = 0
   name = 'Iowa Cubs'
-  private iowaCubsRoster = [
+  private roster = [
     'aaron-jones',
     'kerryon-johnson',
     'amari-cooper',
@@ -44,12 +43,12 @@ export class IowaCubsComponent implements OnInit {
   ]
   private iowaCubsInfo = {
     'name': 'Iowa Cubs',
-    'roster': this.iowaCubsRoster
+    'roster': this.roster
   }
-  private iowaCubsPlayerInfo = []
-  private iowaCubsPlayerStatsMap: Map<any, PlayerStatsComponent> = new Map<any, PlayerStatsComponent>()
-  private iowaCubsRunningBacks = []
-  private iowaCubsWideReceivers = []
+  private playerInfo = []
+  private playerStatsMap: Map<any, PlayerStatsComponent> = new Map<any, PlayerStatsComponent>()
+  private runningBacks = []
+  private wideReceivers = []
 
   ngOnInit() {
     this.getPlayerInfo()
@@ -57,7 +56,7 @@ export class IowaCubsComponent implements OnInit {
   }
 
   getPlayerInfo() {
-    this.iowaCubsRoster.forEach(player => {
+    this.roster.forEach(player => {
       let playerInfo
       this.getPlayersService.getPlayerData(player)
       .subscribe(response => {
@@ -71,18 +70,18 @@ export class IowaCubsComponent implements OnInit {
           response['players'][0]['uniform_number'],
           response['players'][0]['years_of_experience']
         )
-        this.iowaCubsPlayerInfo.push(playerInfo)
+        this.playerInfo.push(playerInfo)
         if (playerInfo.position == 'RB') {
-          this.iowaCubsRunningBacks.push(playerInfo)
+          this.runningBacks.push(playerInfo)
         } else if (playerInfo.position == 'WR') {
-          this.iowaCubsWideReceivers.push(playerInfo)
+          this.wideReceivers.push(playerInfo)
         }
       })
     })
   }
 
   getPlayerSeasonStats() {
-    this.iowaCubsRoster.forEach(player => {
+    this.roster.forEach(player => {
       let playerStats
       this.getPlayersService.getPlayerSeasonStats(player)
       .subscribe(response => {
@@ -94,7 +93,19 @@ export class IowaCubsComponent implements OnInit {
           response['player_season_stats'][0]['reception_yards'],
           response['player_season_stats'][0]['reception_touchdowns']
         )
-        this.iowaCubsPlayerStatsMap.set(response['player_season_stats'][0]['player_id'], playerStats)
+        if (playerStats.rushingYards == 0 || playerStats.rushingYards == null) {
+          playerStats.rushingYards = 0
+        }
+        if (playerStats.rushingTds == 0 || playerStats.rushingTds == null) {
+          playerStats.rushingTds = 0
+        }
+        if (playerStats.receivingYards == 0 || playerStats.receivingYards == null) {
+          playerStats.rushingYards = 0
+        }
+        if (playerStats.receivingTds == 0 || playerStats.receivingTds == null) {
+          playerStats.rushingTds = 0
+        }
+        this.playerStatsMap.set(response['player_season_stats'][0]['player_id'], playerStats)
       })
     })
   }
