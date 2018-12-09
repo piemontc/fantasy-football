@@ -1,47 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { GetPlayersService } from '../../services/get-players.service';
-import { CreatePlayerComponent } from 'src/app/models/create-player/create-player.component';
 import { PlayerStatsComponent } from 'src/app/models/player-stats/player-stats.component';
+import { CreatePlayerComponent } from 'src/app/models/create-player/create-player.component';
+import { GetPlayersService } from 'src/app/services/get-players.service';
 
 @Component({
-  selector: 'app-iowa-cubs',
-  templateUrl: './iowa-cubs.component.html',
-  styleUrls: ['./iowa-cubs.component.css']
+  selector: 'app-teenage-newton-ninja-turtles',
+  templateUrl: './teenage-newton-ninja-turtles.component.html',
+  styleUrls: ['./teenage-newton-ninja-turtles.component.css']
 })
-export class IowaCubsComponent implements OnInit {
+export class TeenageNewtonNinjaTurtlesComponent implements OnInit {
 
-  constructor(
-    private getPlayersService: GetPlayersService
-  ) { }
+  constructor(private getPlayersService: GetPlayersService) { }
 
-  name = 'Iowa Cubs'
+  name = 'Teenage Newton Ninja Turtles'
   private roster = [
     'aaron-jones',
-    'kerryon-johnson',
     'amari-cooper',
-    'antonio-brown',
-    'd-j-moore-1997-04-14',
     'jeff-wilson',
-    'justin-jackson-1996-04-22',
-    'c-j-anderson',
-    'rashaad-penny',
-    'doug-baldwin',
     'tre-quan-smith',
     'dante-pettis',
-    'daesean-hamilton',
-    'marquez-valdes-scantling',
-    'ben-roethlisberger',
-    'vance-mcdonald',
-    'alex-smith',
-    'josh-doctson',
-    'ian-thomas',
-    'damien-williams',
-    'paul-richardson',
-    'jonnu-smith',
-    'cody-kessler'
+    'cam-newton',
+    'josh-adams',
+    'keke-coutee',
+    'curtis-samuel',
+    'keenan-allen',
+    'stefon-diggs',
+    'david-njoku',
+    'courtland-sutton',
+    'corey-davis',
+    'dallas-goedert',
+    'rashaad-penny',
+    'ronald-jones-ii',
+    'chris-carson'
   ]
   private teamInfo = {
-    'name': 'Iowa Cubs',
+    'name': 'Teenage Newton Ninja Turtles',
     'roster': this.roster
   }
   private playerInfo = []

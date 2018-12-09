@@ -14,6 +14,8 @@ import { HomeComponent } from './home/home.component';
 import { CreatePlayerComponent } from './models/create-player/create-player.component';
 import { PlayerStatsComponent } from './models/player-stats/player-stats.component';
 import { MatSortModule, MatTableModule } from '@angular/material';
+import { CautiousClayComponent } from './teams/cautious-clay/cautious-clay.component';
+import { TeenageNewtonNinjaTurtlesComponent } from './teams/teenage-newton-ninja-turtles/teenage-newton-ninja-turtles.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MatSortModule, MatTableModule } from '@angular/material';
     TeamsComponent,
     HomeComponent,
     CreatePlayerComponent,
-    PlayerStatsComponent
+    PlayerStatsComponent,
+    CautiousClayComponent,
+    TeenageNewtonNinjaTurtlesComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,7 @@ import { MatSortModule, MatTableModule } from '@angular/material';
     MatCardModule,
     HttpClientModule,
     MatSortModule,
-    MatTableModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

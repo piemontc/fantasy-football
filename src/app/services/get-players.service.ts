@@ -1,9 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
-import { CreatePlayerComponent } from '../models/create-player/create-player.component';
-import { Observable, of } from 'rxjs';
-import { map, share } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +30,6 @@ export class GetPlayersService {
 
   getYesterdaysDate() {
     let today = new Date();
-    return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate() - 1}`
+    return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate() - 2}`
   }
 }

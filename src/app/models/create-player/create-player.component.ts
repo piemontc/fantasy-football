@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-create-player',
   templateUrl: './create-player.component.html',
   styleUrls: ['./create-player.component.css']
 })
-export class CreatePlayerComponent implements OnInit {
+export class CreatePlayerComponent {
 
   constructor(
     private id: String,
@@ -15,10 +15,6 @@ export class CreatePlayerComponent implements OnInit {
     private teamNickName: String,
     private position: String,
     private number: String,
-    private experience: number
+    private experience: number,
   ) { }
-
-  ngOnInit() {
-  }
-
 }

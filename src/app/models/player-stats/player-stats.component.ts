@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-player-stats',
   templateUrl: './player-stats.component.html',
   styleUrls: ['./player-stats.component.css']
 })
-export class PlayerStatsComponent implements OnInit {
+export class PlayerStatsComponent {
 
   constructor(
     public passingYards: number,
@@ -15,8 +15,4 @@ export class PlayerStatsComponent implements OnInit {
     public receivingYards: number,
     public receivingTds: number
   ) { }
-
-  ngOnInit() {
-  }
-
 }

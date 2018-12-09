@@ -23,3 +23,23 @@ th {
 td {
   width: 16%;
 }
+
+.team-block {
+  height: 300px;
+  text-align: center;
+  background-color: #e8ecf2;
+}
+
+.team-block:hover {
+  box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, .2);
+}
+
+.home-block {
+  height: 200px;
+  text-align: center;
+  background-color: #e8ecf2;
+}
+
+.home-block:hover {
+  box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, .2);
+}

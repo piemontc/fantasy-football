@@ -1,47 +1,42 @@
-import { Component, OnInit } from '@angular/core';
-import { GetPlayersService } from '../../services/get-players.service';
-import { CreatePlayerComponent } from 'src/app/models/create-player/create-player.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PlayerStatsComponent } from 'src/app/models/player-stats/player-stats.component';
+import { CreatePlayerComponent } from 'src/app/models/create-player/create-player.component';
+import { GetPlayersService } from 'src/app/services/get-players.service';
 
 @Component({
-  selector: 'app-iowa-cubs',
-  templateUrl: './iowa-cubs.component.html',
-  styleUrls: ['./iowa-cubs.component.css']
+  selector: 'app-cautious-clay',
+  templateUrl: './cautious-clay.component.html',
+  styleUrls: ['./cautious-clay.component.css']
 })
-export class IowaCubsComponent implements OnInit {
+export class CautiousClayComponent implements OnInit {
 
-  constructor(
-    private getPlayersService: GetPlayersService
-  ) { }
+  constructor(private getPlayersService: GetPlayersService) { }
 
-  name = 'Iowa Cubs'
+  name = 'Cautious Clay'
   private roster = [
     'aaron-jones',
-    'kerryon-johnson',
     'amari-cooper',
-    'antonio-brown',
-    'd-j-moore-1997-04-14',
     'jeff-wilson',
-    'justin-jackson-1996-04-22',
-    'c-j-anderson',
-    'rashaad-penny',
-    'doug-baldwin',
     'tre-quan-smith',
     'dante-pettis',
-    'daesean-hamilton',
-    'marquez-valdes-scantling',
-    'ben-roethlisberger',
-    'vance-mcdonald',
-    'alex-smith',
-    'josh-doctson',
-    'ian-thomas',
-    'damien-williams',
-    'paul-richardson',
-    'jonnu-smith',
-    'cody-kessler'
+    'cam-newton',
+    'saquon-barkley',
+    'josh-gordon',
+    'evan-engram',
+    'sony-michel',
+    'a-j-green',
+    'anthony-miller-1995-10-09',
+    'christian-kirk',
+    'sam-darnold',
+    'josh-adams',
+    'keke-coutee',
+    'curtis-samuel',
+    'gus-edwards',
+    //'derrius-guice',
+    'o-j-howard'
   ]
   private teamInfo = {
-    'name': 'Iowa Cubs',
+    'name': 'Cautious Clay',
     'roster': this.roster
   }
   private playerInfo = []
