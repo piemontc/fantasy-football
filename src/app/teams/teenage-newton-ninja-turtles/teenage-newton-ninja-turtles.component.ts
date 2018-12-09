@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PlayerStatsComponent } from 'src/app/models/player-stats/player-stats.component';
 import { CreatePlayerComponent } from 'src/app/models/create-player/create-player.component';
 import { GetPlayersService } from 'src/app/services/get-players.service';
+import { of } from 'rxjs'
 
 @Component({
   selector: 'app-teenage-newton-ninja-turtles',
@@ -33,14 +34,16 @@ export class TeenageNewtonNinjaTurtlesComponent implements OnInit {
     'ronald-jones-ii',
     'chris-carson'
   ]
-  private teamInfo = {
-    'name': 'Teenage Newton Ninja Turtles',
-    'roster': this.roster
-  }
   private playerInfo = []
   private playerStatsMap: Map<any, PlayerStatsComponent> = new Map<any, PlayerStatsComponent>()
   private runningBacks = []
   private wideReceivers = []
+  private teamInfo = {
+    'name': 'Teenage Newton Ninja Turtles',
+    'roster': this.roster,
+    'rbs': this.runningBacks,
+    'wrs': this.wideReceivers
+  }
 
   ngOnInit() {
     this.getPlayerInfo()
@@ -103,6 +106,6 @@ export class TeenageNewtonNinjaTurtlesComponent implements OnInit {
   }
 
   getTeamInfo() {
-    return this.teamInfo
+    return of(this.teamInfo)
   }
 }

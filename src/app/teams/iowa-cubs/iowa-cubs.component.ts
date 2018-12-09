@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GetPlayersService } from '../../services/get-players.service';
 import { CreatePlayerComponent } from 'src/app/models/create-player/create-player.component';
 import { PlayerStatsComponent } from 'src/app/models/player-stats/player-stats.component';
+import { of } from 'rxjs'
 
 @Component({
   selector: 'app-iowa-cubs',
@@ -40,14 +41,16 @@ export class IowaCubsComponent implements OnInit {
     'jonnu-smith',
     'cody-kessler'
   ]
-  private teamInfo = {
-    'name': 'Iowa Cubs',
-    'roster': this.roster
-  }
   private playerInfo = []
   private playerStatsMap: Map<any, PlayerStatsComponent> = new Map<any, PlayerStatsComponent>()
   private runningBacks = []
   private wideReceivers = []
+  private teamInfo = {
+    'name': 'Iowa Cubs',
+    'roster': this.roster,
+    'rbs': this.runningBacks,
+    'wrs': this.wideReceivers
+  }
 
   ngOnInit() {
     this.getPlayerInfo()
@@ -110,6 +113,6 @@ export class IowaCubsComponent implements OnInit {
   }
 
   getTeamInfo() {
-    return this.teamInfo
+    return of(this.teamInfo)
   }
 }

@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PlayerStatsComponent } from 'src/app/models/player-stats/player-stats.component';
 import { CreatePlayerComponent } from 'src/app/models/create-player/create-player.component';
 import { GetPlayersService } from 'src/app/services/get-players.service';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-cautious-clay',
@@ -10,7 +11,9 @@ import { GetPlayersService } from 'src/app/services/get-players.service';
 })
 export class CautiousClayComponent implements OnInit {
 
-  constructor(private getPlayersService: GetPlayersService) { }
+  constructor(
+    private getPlayersService: GetPlayersService
+  ) { }
 
   name = 'Cautious Clay'
   private roster = [
@@ -35,14 +38,16 @@ export class CautiousClayComponent implements OnInit {
     //'derrius-guice',
     'o-j-howard'
   ]
-  private teamInfo = {
-    'name': 'Cautious Clay',
-    'roster': this.roster
-  }
   private playerInfo = []
   private playerStatsMap: Map<any, PlayerStatsComponent> = new Map<any, PlayerStatsComponent>()
   private runningBacks = []
   private wideReceivers = []
+  private teamInfo = {
+    'name': 'Cautious Clay',
+    'roster': this.roster,
+    'rbs': this.runningBacks,
+    'wrs': this.wideReceivers
+  }
 
   ngOnInit() {
     this.getPlayerInfo()
@@ -105,6 +110,6 @@ export class CautiousClayComponent implements OnInit {
   }
 
   getTeamInfo() {
-    return this.teamInfo
+    return of(this.teamInfo)
   }
 }
