@@ -16,6 +16,7 @@
       <th mat-sort-header="rushTds">Rush TDs</th>
       <th mat-sort-header="receivingYards">Receiving Yards</th>
       <th mat-sort-header="receivingTds">Receiving TDs</th>
+      <th mat-sort-header="totalPoints">Points</th>
     </tr>
   
     <tr *ngFor="let player of getRunningBacks()">
@@ -25,6 +26,11 @@
       <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).rushingTds}}</td>
       <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).receivingYards}}</td>
       <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).receivingTds}}</td>
+      <td *ngIf="playerStats.get(player.id)">{{(playerStats.get(player.id).rushingYards) + 
+                                               (playerStats.get(player.id).rushingTds * 6) + 
+                                               (playerStats.get(player.id).receivingYards) + 
+                                               (playerStats.get(player.id).receivingTds * 6)}}
+      </td>
     </tr>
   </table>
 </div>
@@ -39,6 +45,7 @@
       <th mat-sort-header="receivingTds">Receiving TDs</th>
       <th mat-sort-header="rushYards">Rush Yards</th>
       <th mat-sort-header="rushTds">Rush TDs</th>
+      <th mat-sort-header="totalPoints">Points</th>
     </tr>
   
     <tr *ngFor="let player of getWideReceivers()">
@@ -48,6 +55,11 @@
       <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).receivingTds}}</td>
       <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).rushingYards}}</td>
       <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).rushingTds}}</td>
+      <td *ngIf="playerStats.get(player.id)">{{(playerStats.get(player.id).rushingYards) + 
+                                               (playerStats.get(player.id).rushingTds * 6) + 
+                                               (playerStats.get(player.id).receivingYards) + 
+                                               (playerStats.get(player.id).receivingTds * 6)}}
+      </td>
     </tr>
   </table>
 </div>

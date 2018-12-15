@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetPlayerInfoService } from 'src/app/services/get-player-info.service';
+import { SortByStatsService } from 'src/app/services/sort-by-stats.service';
 
 @Component({
   selector: 'app-cautious-clay',
@@ -8,7 +9,7 @@ import { GetPlayerInfoService } from 'src/app/services/get-player-info.service';
 })
 export class CautiousClayComponent implements OnInit {
 
-  constructor(private getPlayerInfoService: GetPlayerInfoService) { }
+  constructor(private getPlayerInfoService: GetPlayerInfoService, private sortByStatsService: SortByStatsService) { }
 
   name = 'Cautious Clay'
   private playerInfo
@@ -28,16 +29,16 @@ export class CautiousClayComponent implements OnInit {
         runningBacks.push(player)
       }
     })
-    return runningBacks
+    return this.sortByStatsService.sortByRushYards(runningBacks, this.playerStats)
   }
 
   getWideReceivers() {
     let wideReceivers = []
     this.playerInfo.forEach(player => {
-      if (player.position == "WR") {
+      if (player.position == "WR" || player.position == "TE") {
         wideReceivers.push(player)
       }
     })
-    return wideReceivers
+    return this.sortByStatsService.sortByReceivingYards(wideReceivers, this.playerStats)
   }
 }

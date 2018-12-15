@@ -20,7 +20,7 @@ export class GetPlayerInfoHelperService {
 
   getTwoDaysAgo() {
     let today = new Date();
-    return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate() - 2}`
+    return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate() - 1}`
   }
 
   getPlayerData(slug: String) {
