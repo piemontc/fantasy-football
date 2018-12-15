@@ -23,24 +23,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cautiousClayComponent.getPlayerInfo()
-    this.cautiousClayComponent.getPlayerSeasonStats()
-    this.cautiousClayComponent.getTeamInfo().subscribe(response => {
-      this.players.runningBacks.push(response.rbs)
-      this.players.wideReceivers.push(response.wrs)
-    })
-    this.iowaCubsComponent.getPlayerInfo()
-    this.iowaCubsComponent.getPlayerSeasonStats()
-    this.iowaCubsComponent.getTeamInfo().subscribe(response => {
-      this.players.runningBacks.push(response.rbs)
-      this.players.wideReceivers.push(response.wrs)
-    })
-    this.tnntComponent.getPlayerInfo()
-    this.tnntComponent.getPlayerSeasonStats()
-    this.tnntComponent.getTeamInfo().subscribe(response => {
-      this.players.runningBacks.push(response.rbs)
-      this.players.wideReceivers.push(response.wrs)
-    })
   }
 
 }

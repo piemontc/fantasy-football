@@ -8,13 +8,14 @@ import { Component } from '@angular/core';
 export class CreatePlayerComponent {
 
   constructor(
-    private id: String,
-    private firstName: String,
-    private lastName: String,
-    private teamLocation: String,
-    private teamNickName: String,
-    private position: String,
-    private number: String,
-    private experience: number,
+    public id: string,
+    public slug: string,
+    public firstName: string,
+    public lastName: string,
+    public teamLocation: string,
+    public teamNickName: string,
+    public position: string,
+    public number: string,
+    public experience: number,
   ) { }
 }

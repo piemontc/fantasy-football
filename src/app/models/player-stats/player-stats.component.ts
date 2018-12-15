@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class PlayerStatsComponent {
 
   constructor(
+    public playerId: String,
     public passingYards: number,
     public passhingTds: number,
     public rushingYards: number,
