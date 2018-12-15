@@ -16,4 +16,16 @@ export class PlayerStatsComponent {
     public receivingYards: number,
     public receivingTds: number
   ) { }
+
+  getPoints(): number {
+    let points = 0
+    points += this.passingYards
+    points += this.passhingTds
+    points += this.rushingYards
+    points += this.rushingTds
+    points += this.receivingYards
+    points += this.receivingTds
+
+    return points
+  }
 }

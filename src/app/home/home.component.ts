@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CautiousClayComponent } from '../teams/cautious-clay/cautious-clay.component';
 import { IowaCubsComponent } from '../teams/iowa-cubs/iowa-cubs.component';
 import { TeenageNewtonNinjaTurtlesComponent } from '../teams/teenage-newton-ninja-turtles/teenage-newton-ninja-turtles.component';
+import { GetPlayerInfoService } from '../services/get-player-info.service';
 
 @Component({
   selector: 'app-home',
@@ -11,18 +12,22 @@ import { TeenageNewtonNinjaTurtlesComponent } from '../teams/teenage-newton-ninj
 export class HomeComponent implements OnInit {
 
   constructor(
+    private getPlayerInfoService: GetPlayerInfoService,
     private cautiousClayComponent: CautiousClayComponent,
     private iowaCubsComponent: IowaCubsComponent,
     private tnntComponent: TeenageNewtonNinjaTurtlesComponent
   ) { }
 
-  public players = {
-    'quarterBacks': [],
-    'runningBacks': [],
-    'wideReceivers': []
-  }
+  private icInfo
+  private ccInfo
+  private tnntInfo
 
   ngOnInit() {
+    this.getPlayerInfoService.createIowaCubsPlayerInfo()
+    this.getPlayerInfoService.createIowaCubsStats()
+    this.getPlayerInfoService.createCautiousClayPlayerInfo()
+    this.getPlayerInfoService.createCautiousClayStats()
+    this.getPlayerInfoService.createTnntPlayerInfo()
+    this.getPlayerInfoService.createTnntStats()
   }
-
 }

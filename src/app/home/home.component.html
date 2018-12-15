@@ -1,25 +1,55 @@
+<div class="row" style="text-align: center;">
+  <h2>Team MVPs</h2>
+</div>
 <div class="row">
-  <h2>Leaderboard</h2>
-</div>
-<!-- <div class="row">
-  <div class="col-lg-3">
-    <div class="row"><div class="col-lg-12"><h3>Quarterback</h3></div></div>
-    <div class="row">
-      <h1>{{ players.runningBacks[2][0].firstName }}</h1>
-    </div>
+  <table matSort>
+    <tr>
+      <th mat-sort-header=""></th>
+      <th mat-sort-header="QB">Quarterback</th>
+      <th mat-sort-header="RB">Runningback</th>
+      <th mat-sort-header="WR">Wide Receiver</th>
+    </tr>
+  
+    <tr>
+      <td>Cautious Clay</td>
+      <td></td>
+      <td>{{cautiousClayComponent.getRunningBacks()[0].firstName}} {{cautiousClayComponent.getRunningBacks()[0].lastName}} -
+          {{cautiousClayComponent.playerStats.get(cautiousClayComponent.getRunningBacks()[0].id).getPoints()}}</td>
+      <td>{{cautiousClayComponent.getWideReceivers()[0].firstName}} {{cautiousClayComponent.getWideReceivers()[0].lastName}} -
+          {{cautiousClayComponent.playerStats.get(cautiousClayComponent.getWideReceivers()[0].id).getPoints()}}</td>
+    </tr>
+
+    <tr>
+      <td>Iowa Cubs</td>
+      <td></td>
+      <td>{{iowaCubsComponent.getRunningBacks()[0].firstName}} {{iowaCubsComponent.getRunningBacks()[0].lastName}} -
+          {{iowaCubsComponent.playerStats.get(iowaCubsComponent.getRunningBacks()[0].id).getPoints()}}</td>
+      <td>{{iowaCubsComponent.getWideReceivers()[0].firstName}} {{iowaCubsComponent.getWideReceivers()[0].lastName}} -
+          {{iowaCubsComponent.playerStats.get(iowaCubsComponent.getWideReceivers()[0].id).getPoints()}}</td>
+    </tr>
+
+    <tr>
+      <td>TNNT</td>
+      <td></td>
+      <td>{{tnntComponent.getRunningBacks()[0].firstName}} {{tnntComponent.getRunningBacks()[0].lastName}} -
+          {{tnntComponent.playerStats.get(tnntComponent.getRunningBacks()[0].id).getPoints()}}</td>
+      <td>{{tnntComponent.getWideReceivers()[0].firstName}} {{tnntComponent.getWideReceivers()[0].lastName}} -
+          {{tnntComponent.playerStats.get(tnntComponent.getWideReceivers()[0].id).getPoints()}}</td>
+    </tr>
+
+    <tr>
+      <td>DJ Jazzy Jeff</td>
+      <td></td>
+      <td>{{cautiousClayComponent.getRunningBacks()[0].firstName}} {{cautiousClayComponent.getRunningBacks()[0].lastName}} -
+          {{cautiousClayComponent.playerStats.get(cautiousClayComponent.getRunningBacks()[0].id).getPoints()}}</td>
+      <td>{{cautiousClayComponent.getWideReceivers()[0].firstName}} {{cautiousClayComponent.getWideReceivers()[0].lastName}} -
+          {{cautiousClayComponent.playerStats.get(cautiousClayComponent.getWideReceivers()[0].id).getPoints()}}</td>
+    </tr>
+  </table>
   </div>
-  <div class="col-lg-3">
-      <div class="row"><div class="col-lg-12"><h3>Runningback</h3></div></div>
-    <div class="row"></div>
-  </div>
-  <div class="col-lg-3">
-      <div class="row"><div class="col-lg-12"><h3>Wide Receiver</h3></div></div>
-    <div class="row"></div>
-  </div>
-</div>
 
 <div class="row">
   <div class="col-lg-12">
-      <a routerLink="/teams" style="text-decoration: none"><mat-card class="home-block">Teams</mat-card></a>
+      <a routerLink="/teams" class="span-button" style="text-decoration: none"><mat-card class="home-block">Teams</mat-card></a>
   </div>
-</div> -->
+</div>

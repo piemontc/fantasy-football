@@ -26,11 +26,7 @@
       <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).rushingTds}}</td>
       <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).receivingYards}}</td>
       <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).receivingTds}}</td>
-      <td *ngIf="playerStats.get(player.id)">{{(playerStats.get(player.id).rushingYards) + 
-                                               (playerStats.get(player.id).rushingTds * 6) + 
-                                               (playerStats.get(player.id).receivingYards) + 
-                                               (playerStats.get(player.id).receivingTds * 6)}}
-      </td>
+      <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).getPoints()}}</td>
     </tr>
   </table>
 </div>
@@ -55,11 +51,7 @@
       <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).receivingTds}}</td>
       <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).rushingYards}}</td>
       <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).rushingTds}}</td>
-      <td *ngIf="playerStats.get(player.id)">{{(playerStats.get(player.id).rushingYards) + 
-                                               (playerStats.get(player.id).rushingTds * 6) + 
-                                               (playerStats.get(player.id).receivingYards) + 
-                                               (playerStats.get(player.id).receivingTds * 6)}}
-      </td>
+      <td *ngIf="playerStats.get(player.id)">{{playerStats.get(player.id).getPoints()}}</td>
     </tr>
   </table>
 </div>

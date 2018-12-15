@@ -23,22 +23,26 @@ export class IowaCubsComponent implements OnInit {
   }
 
   getRunningBacks() {
+    this.playerInfo = this.getPlayerInfoService.getIowaCubsPlayerInfo()
+    this.playerStats = this.getPlayerInfoService.getIowaCubsPlayerStats()
     let runningBacks = []
     this.playerInfo.forEach(player => {
       if (player.position == "RB") {
         runningBacks.push(player)
       }
     })
-    return this.sortByStatsService.sortByRushYards(runningBacks, this.playerStats)
+    return this.sortByStatsService.sortByPoints(runningBacks, this.playerStats)
   }
 
   getWideReceivers() {
+    this.playerInfo = this.getPlayerInfoService.getIowaCubsPlayerInfo()
+    this.playerStats = this.getPlayerInfoService.getIowaCubsPlayerStats()
     let wideReceivers = []
     this.playerInfo.forEach(player => {
       if (player.position == "WR" || player.position == "TE") {
         wideReceivers.push(player)
       }
     })
-    return this.sortByStatsService.sortByReceivingYards(wideReceivers, this.playerStats)
+    return this.sortByStatsService.sortByPoints(wideReceivers, this.playerStats)
   }
 }
