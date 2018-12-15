@@ -13,7 +13,7 @@ export class IowaCubsComponent implements OnInit {
 
   name = 'Iowa Cubs'
   private playerInfo
-  private playerStats
+  public playerStats
 
   ngOnInit() {
     this.getPlayerInfoService.createIowaCubsPlayerInfo()
@@ -44,5 +44,11 @@ export class IowaCubsComponent implements OnInit {
       }
     })
     return this.sortByStatsService.sortByPoints(wideReceivers, this.playerStats)
+  }
+
+  getStats() {
+    this.playerInfo = this.getPlayerInfoService.getCautiousClayPlayerInfo()
+    this.playerStats = this.getPlayerInfoService.getCautiousClayPlayerStats()
+    return this.playerStats
   }
 }

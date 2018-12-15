@@ -13,7 +13,7 @@ export class CautiousClayComponent implements OnInit {
 
   name = 'Cautious Clay'
   private playerInfo
-  private playerStats
+  public playerStats
 
   ngOnInit() {
     this.getPlayerInfoService.createCautiousClayPlayerInfo()

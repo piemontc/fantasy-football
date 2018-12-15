@@ -13,7 +13,7 @@ export class TeenageNewtonNinjaTurtlesComponent implements OnInit {
 
   name = 'Teenage Newton Ninja Turtles'
   private playerInfo
-  private playerStats
+  public playerStats
 
   ngOnInit() {
     this.getPlayerInfoService.createTnntPlayerInfo()
@@ -44,5 +44,11 @@ export class TeenageNewtonNinjaTurtlesComponent implements OnInit {
       }
     })
     return this.sortByStatsService.sortByPoints(wideReceivers, this.playerStats)
+  }
+
+  getStats() {
+    this.playerInfo = this.getPlayerInfoService.getCautiousClayPlayerInfo()
+    this.playerStats = this.getPlayerInfoService.getCautiousClayPlayerStats()
+    return this.playerStats
   }
 }
