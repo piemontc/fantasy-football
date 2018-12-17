@@ -34,6 +34,30 @@ export class IowaCubsComponent implements OnInit {
     return this.sortByStatsService.sortByPoints(runningBacks, this.playerStats)
   }
 
+  getRunningBacksByYards() {
+    this.playerInfo = this.getPlayerInfoService.getIowaCubsPlayerInfo()
+    this.playerStats = this.getPlayerInfoService.getIowaCubsPlayerStats()
+    let runningBacks = []
+    this.playerInfo.forEach(player => {
+      if (player.position == "RB") {
+        runningBacks.push(player)
+      }
+    })
+    return this.sortByStatsService.sortByRushYards(runningBacks, this.playerStats)
+  }
+
+  getRunningBacksByTds() {
+    this.playerInfo = this.getPlayerInfoService.getIowaCubsPlayerInfo()
+    this.playerStats = this.getPlayerInfoService.getIowaCubsPlayerStats()
+    let runningBacks = []
+    this.playerInfo.forEach(player => {
+      if (player.position == "RB") {
+        runningBacks.push(player)
+      }
+    })
+    return this.sortByStatsService.sortByRushTds(runningBacks, this.playerStats)
+  }
+
   getWideReceivers() {
     this.playerInfo = this.getPlayerInfoService.getIowaCubsPlayerInfo()
     this.playerStats = this.getPlayerInfoService.getIowaCubsPlayerStats()
@@ -44,6 +68,30 @@ export class IowaCubsComponent implements OnInit {
       }
     })
     return this.sortByStatsService.sortByPoints(wideReceivers, this.playerStats)
+  }
+
+  getWideReceiversByYards() {
+    this.playerInfo = this.getPlayerInfoService.getIowaCubsPlayerInfo()
+    this.playerStats = this.getPlayerInfoService.getIowaCubsPlayerStats()
+    let wideReceivers = []
+    this.playerInfo.forEach(player => {
+      if (player.position == "WR" || player.position == "TE") {
+        wideReceivers.push(player)
+      }
+    })
+    return this.sortByStatsService.sortByReceivingYards(wideReceivers, this.playerStats)
+  }
+
+  getWideReceiversByTds() {
+    this.playerInfo = this.getPlayerInfoService.getIowaCubsPlayerInfo()
+    this.playerStats = this.getPlayerInfoService.getIowaCubsPlayerStats()
+    let wideReceivers = []
+    this.playerInfo.forEach(player => {
+      if (player.position == "WR" || player.position == "TE") {
+        wideReceivers.push(player)
+      }
+    })
+    return this.sortByStatsService.sortByReceivingTds(wideReceivers, this.playerStats)
   }
 
   getStats() {

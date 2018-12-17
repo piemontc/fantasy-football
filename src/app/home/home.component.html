@@ -8,17 +8,24 @@
       <th mat-sort-header="RB">Runningback</th>
       <th mat-sort-header="WR">Wide Receiver</th>
     </tr>
-  
+
     <tr>
-        <td></td>
-        <td>{{getMaxRbPoints()['info'].firstName}} {{getMaxRbPoints()['info'].lastName}} - {{getMaxRbPoints()['points']}}</td>
-        <td>{{getMaxWrPoints()['info'].firstName}} {{getMaxWrPoints()['info'].lastName}} - {{getMaxWrPoints()['points']}}</td>
-      </tr>
+      <td></td>
+      <td>{{getMaxRbPoints()['info'].firstName}} {{getMaxRbPoints()['info'].lastName}} - {{getMaxRbPoints()['points']}}</td>
+      <td>{{getMaxWrPoints()['info'].firstName}} {{getMaxWrPoints()['info'].lastName}} - {{getMaxWrPoints()['points']}}</td>
+    </tr>
   </table>
-  </div>
+</div>
 
 <div class="row">
-  <div class="col-lg-12">
-      <a routerLink="/teams" class="span-button" style="text-decoration: none"><mat-card class="home-block">Teams</mat-card></a>
+  <div class="col-lg-5">
+    <a routerLink="/teams" class="span-button" style="text-decoration: none">
+      <mat-card class="home-block">Teams</mat-card>
+    </a>
+  </div>
+  <div class="col-lg-5">
+    <a routerLink="/leaderboard" class="span-button" style="text-decoration: none">
+      <mat-card class="home-block">Leaderboard</mat-card>
+    </a>
   </div>
 </div>

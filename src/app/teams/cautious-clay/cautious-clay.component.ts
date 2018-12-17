@@ -34,6 +34,18 @@ export class CautiousClayComponent implements OnInit {
     return this.sortByStatsService.sortByPoints(runningBacks, this.playerStats)
   }
 
+  getRunningBacksByYards() {
+    this.playerInfo = this.getPlayerInfoService.getCautiousClayPlayerInfo()
+    this.playerStats = this.getPlayerInfoService.getCautiousClayPlayerStats()
+    let runningBacks = []
+    this.playerInfo.forEach(player => {
+      if (player.position == "RB") {
+        runningBacks.push(player)
+      }
+    })
+    return this.sortByStatsService.sortByRushYards(runningBacks, this.playerStats)
+  }
+
   getWideReceivers() {
     this.playerInfo = this.getPlayerInfoService.getCautiousClayPlayerInfo()
     this.playerStats = this.getPlayerInfoService.getCautiousClayPlayerStats()

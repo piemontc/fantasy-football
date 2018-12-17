@@ -1,0 +1,335 @@
+<div class="row">
+  <span class="span-button" routerLink="/"><i class="material-icons">arrow_back_ios</i><h3 style="display: inline;">Home</h3></span>
+</div>
+
+<div class="row" style="text-align: center;">
+  <h2>Team Leaderboard</h2>
+</div>
+
+<div class="row">
+  <h3>Iowa Cubs</h3>
+</div>
+
+<div class="row">
+  <h4>Rushing</h4>
+</div>
+
+<div>
+  <div class="row">
+    <h5>Rushing Yards</h5>
+    <table>
+      <tr>
+        <th header="name">Name</th>
+        <th header="team">Team</th>
+        <th header="rushingYards">Rushing Yards</th>
+      </tr>
+    
+      <tr *ngFor="let player of getIowaCubsRushYardLeaders()">
+        <td>{{player['info'].firstName}} {{player['info'].lastName}}</td>
+        <td>{{player['info'].teamNickName}}</td>
+        <td>{{player['total']}}</td>
+      </tr>
+    </table>
+  </div>
+    <div class="row">
+    <h5>Rushing TDs</h5>
+    <table>
+      <tr>
+        <th header="name">Name</th>
+        <th header="team">Team</th>
+        <th header="rushingTds">Receiving TDs</th>
+      </tr>
+    
+      <tr  *ngFor="let player of getIowaCubsRushTdLeaders()">
+          <td>{{player['info'].firstName}} {{player['info'].lastName}}</td>
+          <td>{{player['info'].teamNickName}}</td>
+          <td>{{player['total']}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <h4>Receiving</h4>
+</div>
+
+<div>
+  <div class="row">
+    <h5>Receiving Yards</h5>
+    <table>
+      <tr>
+        <th header="name">Name</th>
+        <th header="team">Team</th>
+        <th header="catchYards">Receiving Yards</th>
+      </tr>
+    
+      <tr *ngFor="let player of getIowaCubsReceivingYardLeaders()">
+        <td>{{player['info'].firstName}} {{player['info'].lastName}}</td>
+        <td>{{player['info'].teamNickName}}</td>
+        <td>{{player['total']}}</td>
+      </tr>
+    </table>
+  </div>
+    <div class="row">
+    <h5>Receiving TDs</h5>
+    <table>
+      <tr>
+        <th header="name">Name</th>
+        <th mheader="team">Team</th>
+        <th header="catchTds">Receiving TDs</th>
+      </tr>
+    
+      <tr *ngFor="let player of getIowaCubsReceivingTdLeaders()">
+          <td>{{player['info'].firstName}} {{player['info'].lastName}}</td>
+          <td>{{player['info'].teamNickName}}</td>
+          <td>{{player['total']}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <h3>Cautious Clay</h3>
+</div>
+
+<div class="row">
+  <h4>Rushing</h4>
+</div>
+
+<div>
+  <div class="row">
+    <h5>Rushing Yards</h5>
+    <table matSort>
+      <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="team">Team</th>
+        <th mat-sort-header="rushingYards">Rushing Yards</th>
+      </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+    <div class="row">
+    <h5>Rushing TDs</h5>
+    <table matSort>
+      <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="team">Team</th>
+        <th mat-sort-header="rushingTds">Receiving TDs</th>
+      </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <h4>Receiving</h4>
+</div>
+
+<div>
+  <div class="row">
+    <h5>Receiving Yards</h5>
+    <table matSort>
+      <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="team">Team</th>
+        <th mat-sort-header="catchYards">Receiving Yards</th>
+      </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+    <div class="row">
+    <h5>Receiving TDs</h5>
+    <table matSort>
+      <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="team">Team</th>
+        <th mat-sort-header="catchTds">Receiving TDs</th>
+      </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <h3>Teenage Newton Ninja Turtles</h3>
+</div>
+
+<div class="row">
+  <h4>Rushing</h4>
+</div>
+
+<div>
+  <div class="row">
+    <h5>Rushing Yards</h5>
+    <table matSort>
+      <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="team">Team</th>
+        <th mat-sort-header="rushingYards">Rushing Yards</th>
+      </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+    <div class="row">
+    <h5>Rushing TDs</h5>
+    <table matSort>
+      <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="team">Team</th>
+        <th mat-sort-header="rushingTds">Receiving TDs</th>
+      </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <h4>Receiving</h4>
+</div>
+
+<div>
+  <div class="row">
+    <h5>Receiving Yards</h5>
+    <table matSort>
+      <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="team">Team</th>
+        <th mat-sort-header="catchYards">Receiving Yards</th>
+      </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+    <div class="row">
+    <h5>Receiving TDs</h5>
+    <table matSort>
+      <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="team">Team</th>
+        <th mat-sort-header="catchTds">Receiving TDs</th>
+      </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <h3>DJ Jazzy Jeff</h3>
+</div>
+
+<div class="row">
+  <h4>Rushing</h4>
+</div>
+
+<div>
+  <div class="row">
+    <h5>Rushing Yards</h5>
+    <table matSort>
+      <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="team">Team</th>
+        <th mat-sort-header="rushingYards">Rushing Yards</th>
+      </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+    <div class="row">
+    <h5>Rushing TDs</h5>
+    <table matSort>
+      <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="team">Team</th>
+        <th mat-sort-header="rushingTds">Receiving TDs</th>
+      </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <h4>Receiving</h4>
+</div>
+
+<div>
+  <div class="row">
+    <h5>Receiving Yards</h5>
+    <table matSort>
+      <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="team">Team</th>
+        <th mat-sort-header="catchYards">Receiving Yards</th>
+      </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+    <div class="row">
+    <h5>Receiving TDs</h5>
+    <table matSort>
+      <tr>
+        <th mat-sort-header="name">Name</th>
+        <th mat-sort-header="team">Team</th>
+        <th mat-sort-header="catchTds">Receiving TDs</th>
+      </tr>
+    
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+</div>
